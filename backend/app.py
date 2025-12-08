@@ -22,10 +22,16 @@ def create_app(config_class=Config):
     from routes.auth_routes import auth_bp
     from routes.docs_routes import docs_bp
     from routes.pipeline_routes import pipeline_bp
+    from routes.roadmap_routes import roadmap_bp
+    from routes.step_routes import step_bp
+    from routes.attempt_routes import attempt_bp
     
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(docs_bp, url_prefix="/api/docs")
     app.register_blueprint(pipeline_bp, url_prefix="/api/pipeline")
+    app.register_blueprint(roadmap_bp, url_prefix="/api/roadmap")
+    app.register_blueprint(step_bp, url_prefix="/api/steps")
+    app.register_blueprint(attempt_bp, url_prefix="/api/attempts")
     
     # Health check endpoint
     @app.route("/api/health")
