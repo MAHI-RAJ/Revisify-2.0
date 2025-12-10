@@ -1,0 +1,78 @@
+/* 
+ * Revisify 2.0 Global Styles
+ * This file imports the main stylesheet and can be extended with additional global styles
+ */
+
+@import '../index.css';
+
+/* Additional global utilities */
+.glass-effect {
+  @apply backdrop-blur-md bg-background/80 border border-border/50;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent;
+}
+
+.hover-lift {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:border-primary/30;
+}
+
+/* Learning progress indicators */
+.progress-glow {
+  @apply relative;
+}
+
+.progress-glow::after {
+  content: '';
+  @apply absolute inset-0 rounded-full opacity-50 blur-sm;
+  background: inherit;
+}
+
+/* Roadmap connection lines */
+.roadmap-line {
+  @apply absolute w-0.5 bg-gradient-to-b from-primary/50 to-primary/20;
+}
+
+/* Chat bubbles */
+.chat-bubble-user {
+  @apply bg-primary text-primary-foreground rounded-2xl rounded-br-md;
+}
+
+.chat-bubble-ai {
+  @apply bg-muted text-foreground rounded-2xl rounded-bl-md;
+}
+
+/* Flashcard styles */
+.flashcard-front {
+  @apply backface-hidden;
+}
+
+.flashcard-back {
+  @apply backface-hidden;
+  transform: rotateY(180deg);
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-muted rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full hover:bg-primary/50;
+}
